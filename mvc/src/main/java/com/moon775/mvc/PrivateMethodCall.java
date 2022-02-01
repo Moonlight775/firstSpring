@@ -2,7 +2,7 @@ package com.moon775.mvc;
 
 import java.lang.reflect.Method;
 
-public class Main {
+public class PrivateMethodCall {
 
 	public static void main(String[] args) throws Exception{
 //		Hello hello = new Hello();
