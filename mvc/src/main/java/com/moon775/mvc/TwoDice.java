@@ -13,7 +13,7 @@ public class TwoDice {
 	@RequestMapping("/rollDice")
 	public void main(HttpServletResponse response) throws IOException{
 		int idx1 = (int)(Math.random()*6)+1;
-		int idx2 = (int)(Math.random()*6)+1;
+ 		int idx2 = (int)(Math.random()*6)+1;
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");
