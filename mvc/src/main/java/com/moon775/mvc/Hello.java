@@ -3,21 +3,21 @@ package com.moon775.mvc;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-// 1. ¿ø°İ È£Ãâ°¡´ÉÇÑ ÇÁ·Î±×·¥À¸·Îµî·Ï
+// 1. ì›ê²© í˜¸ì¶œê°€ëŠ¥í•œ í”„ë¡œê·¸ë¨ìœ¼ë¡œë“±ë¡
 @Controller
 public class Hello {
-	int iv = 10; // ÀÎ½ºÅÏ½º º¯¼ö
-	static int cv = 20; // static º¯¼ö
+	int iv = 10; // ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+	static int cv = 20; // static ë³€ìˆ˜
 	
-	// 2. URL°ú ¸Ş¼­µå¸¦ ¿¬°á
+	// 2. URLê³¼ ë©”ì„œë“œë¥¼ ì—°ê²°
 	@RequestMapping("/hello")
-	private void main() {	// ÀÎ½ºÅÏ½º ¸Ş¼­µå - iv, cv¸¦ µÑ´Ù »ç¿ë°¡´É
+	private void main() {	// ì¸ìŠ¤í„´ìŠ¤ ë©”ì„œë“œ - iv, cvë¥¼ ë‘˜ë‹¤ ì‚¬ìš©ê°€ëŠ¥
 		System.out.println("Hello - private");
 		System.out.println(cv);	// OK
 		System.out.println(iv); // OK
 	}
 	
-	 public static void main2() {	// static ¸Ş¼­µå - cv¸¸ »ç¿ë°¡´É
+	 public static void main2() {	// static ë©”ì„œë“œ - cvë§Œ ì‚¬ìš©ê°€ëŠ¥
 		 System.out.println(cv); // OK
 //		 System.out.println(iv); // error
 		 

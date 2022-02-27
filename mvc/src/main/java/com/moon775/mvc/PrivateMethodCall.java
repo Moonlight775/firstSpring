@@ -8,13 +8,13 @@ public class PrivateMethodCall {
 //		Hello hello = new Hello();
 //		hello.main();
 		
-		// Reflection API¸¦ »ç¿ë - Å¬·¡½º Á¤º¸¸¦ ¾ò°í ´Ù·ê ¼ö ÀÖ´Â °­·ÂÇÑ ±â´ÉÁ¦°ø
-		// java.lang.reflctÆĞÅ°Áö¸¦ Á¦°ø
-		// Hello Å¬·¡½ºÀÇ Class°´Ã¼(Å¬·¡½ºÀÇÁ¤º¸¸¦ ´ã°í ÀÖ´Â °´Ã¼)¸¦ ¾ò¾î¿Â´Ù.
+		// Reflection APIë¥¼ ì‚¬ìš© - í´ë˜ìŠ¤ ì •ë³´ë¥¼ ì–»ê³  ë‹¤ë£° ìˆ˜ ìˆëŠ” ê°•ë ¥í•œ ê¸°ëŠ¥ì œê³µ
+		// java.lang.reflctíŒ¨í‚¤ì§€ë¥¼ ì œê³µ
+		// Hello í´ë˜ìŠ¤ì˜ Classê°ì²´(í´ë˜ìŠ¤ì˜ì •ë³´ë¥¼ ë‹´ê³  ìˆëŠ” ê°ì²´)ë¥¼ ì–»ì–´ì˜¨ë‹¤.
 		Class helloClass = Class.forName("com.moon775.mvc.Hello");
-		Hello hello = (Hello)helloClass.newInstance(); // Class°´Ã¼°¡ °¡Áø Á¤º¸·Î °´Ã¼ »ı¼º
+		Hello hello = (Hello)helloClass.newInstance(); // Classê°ì²´ê°€ ê°€ì§„ ì •ë³´ë¡œ ê°ì²´ ìƒì„±
 		Method main = helloClass.getDeclaredMethod("main");
-		main.setAccessible(true); // privateÀÎ main()À» È£Ãâ°¡´ÉÇÏ°Ô ÇÑ´Ù.
+		main.setAccessible(true); // privateì¸ main()ì„ í˜¸ì¶œê°€ëŠ¥í•˜ê²Œ í•œë‹¤.
 		
 		main.invoke(hello); // hello.main()
 	}

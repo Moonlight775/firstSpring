@@ -10,28 +10,28 @@ public class RequestInfo {
     @RequestMapping("/requestInfo")
     //    public static void main(String[] args) {
     public void main(HttpServletRequest request) {
-        System.out.println("request.getCharacterEncoding()="+request.getCharacterEncoding()); // ¿äÃ» ³»¿ëÀÇ ÀÎÄÚµù
-        System.out.println("request.getContentLength()="+request.getContentLength());  // ¿äÃ» ³»¿ëÀÇ ±æÀÌ. ¾Ë¼ö ¾øÀ» ¶§´Â -1
-        System.out.println("request.getContentType()="+request.getContentType()); // ¿äÃ» ³»¿ëÀÇ Å¸ÀÔ. ¾Ë ¼ö ¾øÀ» ¶§´Â null
+        System.out.println("request.getCharacterEncoding()="+request.getCharacterEncoding()); // ìš”ì²­ ë‚´ìš©ì˜ ì¸ì½”ë”©
+        System.out.println("request.getContentLength()="+request.getContentLength());  // ìš”ì²­ ë‚´ìš©ì˜ ê¸¸ì´. ì•Œìˆ˜ ì—†ì„ ë•ŒëŠ” -1
+        System.out.println("request.getContentType()="+request.getContentType()); // ìš”ì²­ ë‚´ìš©ì˜ íƒ€ì…. ì•Œ ìˆ˜ ì—†ì„ ë•ŒëŠ” null
 
-        System.out.println("request.getMethod()="+request.getMethod());      // ¿äÃ» ¹æ¹ı
-        System.out.println("request.getProtocol()="+request.getProtocol());  // ÇÁ·ÎÅäÄİÀÇ Á¾·ù¿Í ¹öÁ¯ HTTP/1.1
-        System.out.println("request.getScheme()="+request.getScheme());      // ÇÁ·ÎÅäÄİ
+        System.out.println("request.getMethod()="+request.getMethod());      // ìš”ì²­ ë°©ë²•
+        System.out.println("request.getProtocol()="+request.getProtocol());  // í”„ë¡œí† ì½œì˜ ì¢…ë¥˜ì™€ ë²„ì ¼ HTTP/1.1
+        System.out.println("request.getScheme()="+request.getScheme());      // í”„ë¡œí† ì½œ
 
-        System.out.println("request.getServerName()="+request.getServerName()); // ¼­¹ö ÀÌ¸§ ¶Ç´Â ipÁÖ¼Ò
-        System.out.println("request.getServerPort()="+request.getServerPort()); // ¼­¹ö Æ÷Æ®
-        System.out.println("request.getRequestURL()="+request.getRequestURL()); // ¿äÃ» URL
-        System.out.println("request.getRequestURI()="+request.getRequestURI()); // ¿äÃ» URI
+        System.out.println("request.getServerName()="+request.getServerName()); // ì„œë²„ ì´ë¦„ ë˜ëŠ” ipì£¼ì†Œ
+        System.out.println("request.getServerPort()="+request.getServerPort()); // ì„œë²„ í¬íŠ¸
+        System.out.println("request.getRequestURL()="+request.getRequestURL()); // ìš”ì²­ URL
+        System.out.println("request.getRequestURI()="+request.getRequestURI()); // ìš”ì²­ URI
 
         System.out.println("request.getContextPath()="+request.getContextPath()); // context path
         System.out.println("request.getServletPath()="+request.getServletPath()); // servlet path
-        System.out.println("request.getQueryString()="+request.getQueryString()); // Äõ¸® ½ºÆ®¸µ
+        System.out.println("request.getQueryString()="+request.getQueryString()); // ì¿¼ë¦¬ ìŠ¤íŠ¸ë§
 
-        System.out.println("request.getLocalName()="+request.getLocalName()); // ·ÎÄÃ ÀÌ¸§
-        System.out.println("request.getLocalPort()="+request.getLocalPort()); // ·ÎÄÃ Æ÷Æ®
+        System.out.println("request.getLocalName()="+request.getLocalName()); // ë¡œì»¬ ì´ë¦„
+        System.out.println("request.getLocalPort()="+request.getLocalPort()); // ë¡œì»¬ í¬íŠ¸
 
-        System.out.println("request.getRemoteAddr()="+request.getRemoteAddr()); // ¿ø°İ ipÁÖ¼Ò
-        System.out.println("request.getRemoteHost()="+request.getRemoteHost()); // ¿ø°İ È£½ºÆ® ¶Ç´Â ipÁÖ¼Ò
-        System.out.println("request.getRemotePort()="+request.getRemotePort()); // ¿ø°İ Æ÷Æ®
+        System.out.println("request.getRemoteAddr()="+request.getRemoteAddr()); // ì›ê²© ipì£¼ì†Œ
+        System.out.println("request.getRemoteHost()="+request.getRemoteHost()); // ì›ê²© í˜¸ìŠ¤íŠ¸ ë˜ëŠ” ipì£¼ì†Œ
+        System.out.println("request.getRemotePort()="+request.getRemotePort()); // ì›ê²© í¬íŠ¸
     }
 }

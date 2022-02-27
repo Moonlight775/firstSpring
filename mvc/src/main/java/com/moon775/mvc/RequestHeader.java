@@ -21,7 +21,7 @@ public class RequestHeader {
 	}
 }
 
-/* [½ÇÇà°á°ú]
+/* [Â½Ã‡Ã‡Ã Â°Ã¡Â°Ãº]
 host:localhost:8080
 connection:keep-alive
 sec-ch-ua:" Not;A Brand";v="99", "Google Chrome";v="97", "Chromium";v="97"
