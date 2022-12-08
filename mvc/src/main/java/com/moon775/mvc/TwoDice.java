@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller	// ctrl+shift+o´Â ÀÚµ¿ import
+@Controller	// ctrl+shift+oëŠ” ìë™ import
 public class TwoDice {
 	@RequestMapping("/rollDice")
 	public void main(HttpServletResponse response) throws IOException{

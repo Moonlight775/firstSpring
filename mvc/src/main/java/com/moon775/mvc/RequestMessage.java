@@ -16,7 +16,7 @@ public class RequestMessage {
 	public void main(HttpServletRequest request) throws Exception {
 		
 		// 1. request line
-		String requestLine = request.getMethod();       // GET ¶Ç´Â POST
+		String requestLine = request.getMethod();       // GET ë˜ëŠ” POST
 		requestLine += " " + request.getRequestURI();   // /mvc/requestMessage
 		
 		String queryString = request.getQueryString();  // year=2021&month=10&day=1
@@ -33,7 +33,7 @@ public class RequestMessage {
 			System.out.println(name + ":" + request.getHeader(name));
 		}
 		
-		// 3. request body - POSTÀÏ ¶§¸¸ ÇØ´ç, GETÀº body°¡ ¾øÀ½(CONTENT_LENGTH=0)
+		// 3. request body - POSTì¼ ë•Œë§Œ í•´ë‹¹, GETì€ bodyê°€ ì—†ìŒ(CONTENT_LENGTH=0)
 		final int CONTENT_LENGTH = request.getContentLength();
 		System.out.println("content length="+CONTENT_LENGTH);
 		
@@ -49,7 +49,7 @@ public class RequestMessage {
 	} // main
 }
 
-//[½ÇÇà°á°ú]
+//[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]
 //GET /mvc/requestMessage?year=2021&month=10&day=1 HTTP/1.1
 //host:localhost:8080
 //connection:keep-alive
