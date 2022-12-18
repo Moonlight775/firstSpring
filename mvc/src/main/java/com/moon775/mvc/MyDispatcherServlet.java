@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.ui.Model;
 import org.springframework.validation.support.BindingAwareModelMap;
 
-// @Controller + @RequestMapping
+// @WebServlet = @Controller + @RequestMapping
 @WebServlet("/myDispatcherServlet")  // http://localhost/mvc/myDispatcherServlet?year=2021&month=10&day=1
 public class MyDispatcherServlet extends HttpServlet {
 	@Override
