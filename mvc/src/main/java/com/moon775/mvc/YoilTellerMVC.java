@@ -5,7 +5,9 @@ import java.util.Calendar;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 // 년월일을 입력하면 요일을 알려주는 프로그램
 @Controller
@@ -32,7 +34,11 @@ public class YoilTellerMVC {
 	}
 
 	private static boolean isValid(int year, int month, int day) {
-		return true;
+		if (year == -1 || month == -1 || day == -1) {
+			return false;
+		}
+		
+		return (1 <= month && month <= 12) && (1 <= day && day <= 31);	// 간단히 체크
 	}
 
 	private static char getYoil(int year, int month, int day) {
