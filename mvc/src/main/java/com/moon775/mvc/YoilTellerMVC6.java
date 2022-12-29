@@ -51,13 +51,6 @@ public class YoilTellerMVC6 {
 			return "yoilError";
 		}
 		
-//		2. 요일 계산
-//		char yoil = getYoil(date);
-		
-//		3. 계산한 결과를 model에 저장
-//		m.addAttribute("myDate", date);
-//		m.addAttribute("yoil", yoil);
-		
 //		4. 작업 결과를 보여줄 View의 이름을 반환
 		return "yoil";	// /WEB-INF/views/yoil.jsp
 	}
