@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=utf-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +70,7 @@
     <title>Register</title>
 </head>
 <body>
-   <form action="/mvc/registerInfo.jsp" method="POST" onsubmit="return formCheck(this)">
+   <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)">
     <div class="title">회원가입</div>
     <div id="msg" class="msg"> </div> 
     <label for="">아이디</label>
@@ -109,7 +111,7 @@
        }
        
        function setMessage(msg, element){
-           document.getElementById("msg").innerHTML = `<i class="fa fa-exclamation-circle"> ${msg}</i>`;
+           document.getElementById("msg").innerHTML = `<i class="fa fa-exclamation-circle"> ${'${msg}'}</i>`;
 
            if(element) {
                element.select();
