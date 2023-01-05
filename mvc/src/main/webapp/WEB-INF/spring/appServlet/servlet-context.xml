@@ -24,7 +24,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<view-controller path="/register/add" view-name="registerForm"/>	<!-- GET요청만 허용 -->
+	<!-- <view-controller path="/register/add" view-name="registerForm"/> -->	<!-- GET요청만 허용 -->
 	<context:component-scan base-package="com.moon775.mvc" />
 	
 	
