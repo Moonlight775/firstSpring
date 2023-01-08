@@ -60,18 +60,21 @@
     <form action="<c:url value='/login/login'/>" method="post" onsubmit="return formCheck(this);">
         <h3 id="title">Login</h3>
         <div id="msg">
-	    <c:if test="${not empty param.msg}">
-		<i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.msg)}</i>            
-	    </c:if>        
-	</div>
+	    	<c:if test="${not empty param.msg}">
+				<i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.msg, "utf-8")}</i>            
+	    	</c:if> 
+		</div>
+        
         <input type="text" name="id" placeholder="이메일 입력" autofocus>
         <input type="password" name="pwd" placeholder="비밀번호">
         <button>로그인</button>
+        
         <div>
             <label><input type="checkbox" name="rememberId"> 아이디 기억</label> |
             <a href="">비밀번호 찾기</a> |
             <a href="">회원가입</a>
         </div>
+        
         <script>
             function formCheck(frm) {
                  let msg ='';
