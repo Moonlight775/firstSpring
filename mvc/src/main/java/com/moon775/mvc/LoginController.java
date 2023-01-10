@@ -32,13 +32,14 @@ public class LoginController {
 		if (rememberId) {
 			// 쿠키를 생성
 			Cookie cookie = new Cookie("id", id);
-			// 	 2. 응답에 저장
+			// 응답에 저장
 			response.addCookie(cookie);
 		}
 		else {
 			// 쿠키를 삭제
 			Cookie cookie = new Cookie("id", id);
 			cookie.setMaxAge(0);
+			// 응답에 저장
 			response.addCookie(cookie);
 		}
 		
