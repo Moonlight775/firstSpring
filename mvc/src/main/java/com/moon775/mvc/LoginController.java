@@ -20,6 +20,16 @@ public class LoginController {
 		return "loginForm";
 	}
 	
+	@GetMapping("/logout")
+	// session을 request에서 얻을 수도 있지만, 매개변수에 직접 써줘도 됨
+	public String logout(HttpSession session) {
+		// 1. 세션을 종료
+		session.invalidate();
+		// 2. 홈으로 이동
+		return "redirect:/";
+	}
+	
+	
 	@PostMapping("/login")
 	public String login(String id, String pwd, boolean rememberId, HttpServletRequest request, HttpServletResponse response) throws Exception{
 		// 1. id와 pwd를 확인
