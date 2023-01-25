@@ -27,6 +27,18 @@
 	<!-- <view-controller path="/register/add" view-name="registerForm"/> -->	<!-- GET요청만 허용 -->
 	<context:component-scan base-package="com.moon775.mvc" />
 	
-	
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<beans:property name="defaultErrorView" value="error"/>
+    		<beans:property name="exceptionMappings">
+      			<beans:props>
+        			<beans:prop key="com.moon775.mvc.MyException">error400</beans:prop>
+      			</beans:props>
+    		</beans:property>
+		<beans:property name="statusCodes">
+			<beans:props>
+        			<beans:prop key="error400">404</beans:prop>
+			</beans:props>
+		</beans:property>
+  	</beans:bean>	
 	
 </beans:beans>
