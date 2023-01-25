@@ -1,9 +1,11 @@
 package com.moon775.mvc;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class ExceptionController {
@@ -11,8 +13,9 @@ public class ExceptionController {
 	// main()과 main2()에서 중복된 try catch문 발생
 	// 코드 중복 방지위해 별도의 예외처리해주는 메소드를 추가 후 @ExceptionHandler(예외처리할 종류)를 붙여줌
 	@ExceptionHandler(Exception.class)
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)	// 200 -> 500
 	public String catcher (Exception ex, Model m) {
-		m.addAttribute("ex", ex);
+//		m.addAttribute("ex", ex);
 		return "error";
 	}
 	
