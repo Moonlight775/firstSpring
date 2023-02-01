@@ -29,13 +29,13 @@ public class RegisterController {
 		System.out.println("validatorList = " + validatorList);
 	}
 	
-	@RequestMapping(value="/register/add", method={RequestMethod.GET, RequestMethod.POST})	// get요청과 post 요청을 둘 다 허용 (method를 생략해도 같은 의미) 
+	@RequestMapping(value="/register/add", method=RequestMethod.GET)	// get요청 허용 (method를 생략하면 get, post 둘 다 허용) 
 	public String register() {
 		return "registerForm";	// WEB-INF/views/registerForm.jsp
 	}
 	
 //	@RequestMapping(value="/register/save", method=RequestMethod.POST)
-	@PostMapping("/register/save")	// 스프링 4.3부터
+	@PostMapping("/register/add")	// 스프링 4.3부터
 	public String save(@Valid User user, BindingResult result, Model m) throws Exception{
 		System.out.println("result = " + result);
 		System.out.println("user = " + user);

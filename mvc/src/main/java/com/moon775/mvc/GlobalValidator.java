@@ -20,6 +20,7 @@ public class GlobalValidator implements Validator {
 		User user = (User)target;
 		
 		String id = user.getId();
+		String pwd = user.getPwd();
 		
 //		if (id==null || "".equals(id.trim())) {
 //			errors.rejectValue("id", "required");
@@ -27,8 +28,12 @@ public class GlobalValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "id", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pwd", "required");
 		
-		if (id==null || id.length()<5 || id.length()>12) {
-			errors.rejectValue("id", "invalidLength", new String[] {"5","12"}, null);
+		if (id==null || id.length()<3 || id.length()>12) {
+			errors.rejectValue("id", "invalidLength", new String[] {"3","12"}, null);
+		}
+		
+		if (pwd==null || pwd.length()<5 || pwd.length()>12) {
+			errors.rejectValue("pwd", "invalidLength", new String[] {"5","12"}, null);
 		}
 		
 	}

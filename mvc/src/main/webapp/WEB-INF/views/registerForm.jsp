@@ -57,7 +57,7 @@
 		}
 		
 		.msg {
-		    height: 30px;
+		    height: auto;
 		    text-align: center;
 		    font-size: 16px;
 		    color: red;
@@ -75,11 +75,11 @@
    <%-- <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)"> --%>
    <form:form modelAttribute="user">
     <div class="title">회원가입</div>
-    <div id="msg" class="msg"><form:errors path="id"/></div> 
+    <div id="msg" class="msg"><form:errors path="id"/> <form:errors path="pwd"/></div>
     <label for="">아이디</label>
-    <input class="input-field" type="text" name="id" placeholder="8~12자리의 영대소문자와 숫자 조합" autofocus>
+    <input class="input-field" type="text" name="id" placeholder="3~12자리의 영대소문자와 숫자 조합" autofocus>
     <label for="">비밀번호</label>
-    <input class="input-field" type="password" name="pwd" placeholder="8~12자리의 영대소문자와 숫자 조합">
+    <input class="input-field" type="password" name="pwd" placeholder="5~12자리의 영대소문자와 숫자 조합">
     <label for="">이름</label>
     <input class="input-field" type="text" name="name" placeholder="홍길동">
     <label for="">이메일</label>
@@ -107,8 +107,8 @@
                 return false;
             }
             
-            if(frm.pwd.value.length<3) {
-                setMessage('pwd의 길이는 3이상이어야 합니다.', frm.pwd);
+            if(frm.pwd.value.length<5) {
+                setMessage('pwd의 길이는 5이상이어야 합니다.', frm.pwd);
                 return false;
             }
             
