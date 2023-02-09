@@ -1,2 +1,2 @@
-car=com.moon775.dinaop.diCopy1.SportsCar
-engine=com.moon775.dinaop.diCopy1.Engine
+car=com.moon775.dinaop.diCopy2.Truck
+engine=com.moon775.dinaop.diCopy2.Engine
