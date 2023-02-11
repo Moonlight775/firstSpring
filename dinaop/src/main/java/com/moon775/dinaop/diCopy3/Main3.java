@@ -4,7 +4,6 @@ import com.google.common.reflect.ClassPath;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -49,15 +48,26 @@ class AppContext {
 
     Object getBean(String key) {
         return map.get(key);
+    }   // by Name
+
+    Object getBean(Class clazz) {   // by Type
+        for (Object obj : map.values()) {
+            if (clazz.isInstance(obj)) {
+                return obj;
+            }
+        }
+        return null;
     }
 }
 
 public class Main3 {
     public static void main(String[] args) throws Exception{
         AppContext ac = new AppContext();
-        Car car = (Car) ac.getBean("car");
+        Car car = (Car) ac.getBean("car");  // by Name으로 객체를 검색
+        Car car2 = (Car) ac.getBean(Car.class); // by Type으로  객체를 검색
         Engine engine = (Engine) ac.getBean("engine");
         System.out.println("car = " + car);
+        System.out.println("car2 = " + car2);
         System.out.println("engine = " + engine);
     }
 
