@@ -50,11 +50,6 @@ public class SpringDiTest {
         Engine engine = (Engine) ac.getBean("engine");
         Door door = (Door) ac.getBean("door");
 
-        car.setColor("red");
-        car.setOil(100);
-        car.setEngine(engine);
-        car.setDoors(new Door[] {ac.getBean("door", Door.class), (Door) ac.getBean("door")});
-
         System.out.println("car = " + car);
     }
 }
