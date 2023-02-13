@@ -5,14 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 @Component class Car {
-    @Autowired Engine engine;
-    @Autowired Door   door;
+    @Resource
+    Engine engine;
+    @Resource Door   door;
 
     @Override
     public String toString() {
@@ -34,6 +36,23 @@ class AppContext {
        map = new HashMap();
        doComponentScan();
        doAutowired();
+       doResource();
+    }
+
+    private void doResource() {
+        // map에 저장된 객체의 iv 중에 @Resource 가 붙어 있으면
+        // map에서 iv의 이름에 맞는 객체를 찾아서 연결(객체의 주소를 iv에 저장)
+        try {
+            for (Object bean : map.values()) {
+                for (Field fld : bean.getClass().getDeclaredFields()) {
+                    if (fld.getAnnotation(Resource.class) != null) {   // by Name
+                        fld.set(bean, getBean(fld.getName()));  // car.engine = obj;
+                    }
+                }
+            }
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     private void doAutowired() {
