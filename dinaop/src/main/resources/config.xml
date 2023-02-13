@@ -3,15 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id ="car" class="com.moon775.dinaop.Car" scope="prototype"> <!--prototype은 getBean 할때마다 매번 새로운 객체 -->
-        <property name="color" value ="red" />  <!--property 태그를 사용하려면 setter가 있어야 함-->
-        <property name="oil" value="100"/>  <!--int type이여도 xml에서는 "" 써줘야 함, 자동 변환됨-->
-        <property name="engine" ref="engine"/>
-        <property name="doors">
+        <constructor-arg name="color" value ="red" />   <!--constructor-arg는 생성자 이용하여 초기화-->
+        <constructor-arg name="oil" value="100"/>  <!--int type이여도 xml에서는 "" 써줘야 함, 자동 변환됨-->
+        <constructor-arg name="engine" ref="engine"/>
+        <constructor-arg name="doors">
             <array value-type="com.moon775.dinaop.Door">
                 <ref bean="door"/>
                 <ref bean="door"/>
             </array>
-        </property>
+        </constructor-arg>
     </bean>
     <bean id ="engine" class="com.moon775.dinaop.Engine" scope="singleton"/>    <!--singleton은 class 객체를 하나만 생성-->
     <bean id ="door" class="com.moon775.dinaop.Door"/>  <!--scope 생략 시 singleton-->

@@ -11,6 +11,15 @@ class Car{
     Engine engine;
     Door[] doors;
 
+    public Car() {} // 기본 생성자를 잊지 않고 만들어줘야 좋다.
+
+    public Car(String color, int oil, Engine engine, Door[] doors) {
+        this.color = color;
+        this.oil = oil;
+        this.engine = engine;
+        this.doors = doors;
+    }
+
     public void setColor(String color) {
         this.color = color;
     }
